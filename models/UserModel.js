@@ -76,7 +76,6 @@ UserSchema.methods.generateToken = async function () {
     const token = jwt.sign({ id: user._id }, process.env.SECURE, {
       expiresIn: "1h",
     });
-    user.tokens = user.tokens.concat({ token });
     await user.save();
     return { token };
   } catch (error) {
