@@ -43,7 +43,7 @@ var UserSchema = new Schema({
 
 UserSchema.statics.loginWithEmailAndPassword = async (credential) => {
   try {
-    const user = await SuperAdmin.findOne({ email: credential.email });
+    const user = await User.findOne({ email: credential.email });
     if (!user) {
       throw new Error("Loging Error");
     }
