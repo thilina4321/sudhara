@@ -42,5 +42,5 @@ exports.loginUser = async(req, res) => {
 
 
 exports.getUserDetails= (req, res) => {
-    res.json({status: true, message: "User Received!", data: req.user});
+    res.send({status: true, message: "User Received!", data: req.user});
 };

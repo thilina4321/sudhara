@@ -87,7 +87,7 @@ exports.getAllCustomers = async (req, res) => {
         const agents = await User.find({role:'CUSTOMER'})
         return res.status(200).json({
             success: true,
-            message: "Received all agents!",
+            message: "Received all customers!",
             data: agents
         });
         
