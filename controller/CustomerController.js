@@ -81,7 +81,7 @@ exports.updateAppointment = async (req, res) => {
     try {
         const appointment = await Appointment.findByIdAndUpdate(id, req.body, {new:true})
         return res.status(200).json({
-            success: false,
+            success: true,
             message: "Appointment update successfully",
             data:appointment
         });
@@ -169,7 +169,7 @@ exports.updateVehicle = async (req, res) => {
     try {
         const vehicle = await Vehicle.findByIdAndUpdate(id, req.body, {new:true})
         return res.status(200).json({
-            success: false,
+            success: true,
             message: "Vehicle update successfully",
             data:vehicle
         });

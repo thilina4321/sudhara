@@ -5,7 +5,7 @@ const  Appointment  = require("../models/AppointmentModel")
 exports.createServiceRecord = async (req, res) => {
 
     var newServiceRecord = new ServiceRecord(req.body);
-    newServiceRecord.serviceAgent = req.user._id;
+    newServiceRecord.serviceAgent = req.user_id;
 
     try {
 
