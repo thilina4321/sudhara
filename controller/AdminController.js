@@ -64,7 +64,7 @@ exports.deleteAgent = async ( req, res ) => {
 
 exports.getAllAgents = async (req, res) => {
     try {
-        const agents = await User.find({role:'AGENT'})
+        const agents = await User.find({role:'SERVICE_AGENT'})
         return res.status(200).json({
             success: true,
             message: "Received all agents!",
@@ -84,11 +84,11 @@ exports.getAllAgents = async (req, res) => {
 
 exports.getAllCustomers = async (req, res) => {
     try {
-        const agents = await User.find({role:'CUSTOMER'})
+        const customer = await User.find({role:'CUSTOMER'})
         return res.status(200).json({
             success: true,
             message: "Received all customers!",
-            data: agents
+            data: customer
         });
         
     } catch (error) {
